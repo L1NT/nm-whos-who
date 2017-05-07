@@ -39,7 +39,7 @@ export class MeetupService {
   public readonly redirectURI = 'https://192.168.0.184/nm';
   private readonly oauthSecret = 'fb32q17eq2b2v0tc32lnbmhsgk';
 
-  private accessToken:string = 'foo';
+  private accessToken:string;
   private refreshToken:string;
 
   private mkeGroupIds:string[];
