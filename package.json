@@ -21,7 +21,11 @@
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.25",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
+    "express": "^4.15.2",
+    "nodemon": "^1.11.0",
+    "orm": "^3.2.3",
     "rxjs": "^5.1.0",
+    "sqlite3": "^3.1.8",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
@@ -50,6 +54,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+
+    "init-db": "echo 'node ./src/server/bin/syncdb.js'",
+    "server": "nodemon ./src/server/server.js"
   }
 }

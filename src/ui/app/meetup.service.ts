@@ -39,6 +39,8 @@ export class MeetupService {
   public readonly redirectURI = 'https://192.168.0.184/nm';
   private readonly oauthSecret = 'fb32q17eq2b2v0tc32lnbmhsgk';
 
+  private accessToken:string = 'foo';
+  private refreshToken:string;
 
   private mkeGroupIds:string[];
 
@@ -52,19 +54,32 @@ export class MeetupService {
     })
   }
 
+  public sortMembers(members:Member[]) {
+    members.sort((a:Member, b:Member):number => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
+  }
+
   public getMembers(query:string):Observable<Member[]> {
     return  this.getGroupIds().switchMap((groups:string[]) => {
+      if (!groups)
+        return Observable.of(undefined);
+
       let searchParams = this.buildSearchParams();
       searchParams.set('group_id', groups.join(","));
-      // this will return the first 800 (of 1200+) members of MilwaukeeJS
+      // this will return the first 800 (of 1200+) members who joined MilwaukeeJS
       searchParams.set('order', 'joined');
 
       return this.http.get(this.url+'2/members?' + searchParams.toString()).map((response:Response) => {
         let members:Member[] = response.json().results;
         let needle = new RegExp(query, 'i');
-        return members.filter((member:Member) => {
+        let filtered = members.filter((member:Member) => {
           return needle.test(member.name);
         });
+        this.sortMembers(filtered);
+        return filtered;
       }).catch((error:any):Observable<{}> => {
         console.log(error);
         this.accessToken = null;
@@ -106,11 +121,12 @@ export class MeetupService {
           }
         });
         return this.mkeGroupIds;
+      }).catch((error:any):Observable<{}> => {
+        this.accessToken = null;
+        return Observable.of(undefined);
       });
   }
 
-  private accessToken:string;
-  private refreshToken:string;
   private getRefreshedToken():Observable<{}> {
     let params = new URLSearchParams();
     params.set('client_id', this.oauthKey);

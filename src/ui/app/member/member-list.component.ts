@@ -45,6 +45,7 @@ export class MemberListComponent {
     });
     from.splice(index, 1);
     to.push(member);
+    this.meetupService.sortMembers(to);
   }
 
   private unpin(member:Member):void {

@@ -8,7 +8,7 @@ import {MeetupService} from './meetup.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  private type:'members'|'meetups' = 'members';
+  private type:'oauth'|'express' = 'oauth';
 
   public constructor(private meetupService:MeetupService) { }
 }
