@@ -1,0 +1,7 @@
+body {
+  min-width: 480px;
+
+  background: -moz-radial-gradient(center, #d0e4f7 0%, #73b1e7 33%, #539fe1 67%, #87bcea 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, #d0e4f7 0%,#73b1e7 33%,#539fe1 67%,#87bcea 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #d0e4f7 0%, #539fe1 87%, #87bcea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
