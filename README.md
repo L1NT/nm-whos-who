@@ -1,5 +1,36 @@
 # NM Whos Who
 
+### [View Online](http://www.lukejeter.com/family/luke/nm)
+
+## Status
+* responsive - uses Bootstrap v4 grid layout and responsive features (hidden)
+* filter a list of things - pulls first 800 Members who joined the MilwaukeeJS Meetup and allows the User to filter by member name; the query is far from "quick", however
+* search input and list of results - input is triggered by 'keyevent.enter' and 'input.blur'
+* includes the ability to 'pin' results and query for additional members
+  * (outstanding) 'unpinned' items should only be added to the results list if they match the input query term
+* results are sorted alphabetically - both the 'pinned' list and the active results are alphabetized by member name
+* (outstanding) pull data from a backend service you write - I'd initially overlooked this requirement, which is why the UI uses Oauth2 to pull data directly from the Meetup.com API; I began creating and Express server, but the following items are still outstanding
+  * finish background service to fetch Meetup and member data
+  * add unit and api tests
+  * expand endpoint data
+  * update UI to consume different JSON structures
+* (outstanding) unit tests for Angular Components/Service
+* (outstanding) e2e Protractor tests
+* (outstanding) Travis config
+
+## Technologies
+* Angular v4
+  * Angular CLI to bootstrap project and manage build
+  * TypeScript
+* Bootstrap v4
+* Sass
+* Glyphicons
+* Protractor/Karma/Jasmine - loosely; most was configured by angular-cli
+* Oauth2 with Meetup.com API
+* Express server
+  * orm
+  * Sqlite3
+
 ## Description
 You’ll be working with a cross-functional engineering team to deliver PoC’s and experiments; you’ll be the lead engineer. To demonstrate excellence in modern development tools and frameworks, we ask that you complete the following challenge. Please use this test to show off your skill set and what you can bring to the team. You will be critiqued on your quality, completeness, creativity, and technologies. If we proceed forward in the interviewing process, you will be asked to walk through your code. Choose modern technologies that exercise the breadth of approach and ones that you’re comfortable developing with.
 When you have completed the following challenge, place your code in a code repository, ex. github, bitbucket, dropbox, etc.
