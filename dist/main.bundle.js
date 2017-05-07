@@ -349,6 +349,8 @@ var MeetupService = (function () {
         this.url = 'https://api.meetup.com/';
         this.oathUrl = 'https://secure.meetup.com/oauth2/';
         this.oauthKey = '505i52k35p57g85p8gvl905afa';
+        // NOTE: Yout OAuth Consumers Redirect URI config is only `protocol://host:port/`
+        // i.e. `https://home.lukejeter.com:3723/`
         this.redirectURI = 'https://home.lukejeter.com:3723/nm/';
         this.oauthSecret = 'h9eh4jgb00f4lo8rlv7knef9jq';
         var urlHash = document.location.hash.split('&');

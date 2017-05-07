@@ -14,6 +14,7 @@
   * add unit and api tests
   * expand endpoint data
   * update UI to consume different JSON structures
+* (outstanding) add loading spinner
 * (outstanding) unit tests for Angular Components/Service
 * (outstanding) e2e Protractor tests
 * (outstanding) Travis config
