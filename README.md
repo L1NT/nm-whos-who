@@ -1,6 +1,6 @@
 # NM Whos Who
 
-### [View Online](http://www.lukejeter.com/family/luke/nm)
+### [View Online](https://home.lukejeter.com:3723/nm)
 
 ## Status
 * responsive - uses Bootstrap v4 grid layout and responsive features (hidden)

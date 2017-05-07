@@ -36,8 +36,8 @@ export class MeetupService {
   private readonly url:string = 'https://api.meetup.com/';
   public readonly oathUrl = 'https://secure.meetup.com/oauth2/';
   public readonly oauthKey = '505i52k35p57g85p8gvl905afa';
-  public readonly redirectURI = 'https://192.168.0.184/nm';
-  private readonly oauthSecret = 'fb32q17eq2b2v0tc32lnbmhsgk';
+  public readonly redirectURI = 'https://home.lukejeter.com:3723/nm/';
+  private readonly oauthSecret = 'h9eh4jgb00f4lo8rlv7knef9jq';
 
   private accessToken:string;
   private refreshToken:string;

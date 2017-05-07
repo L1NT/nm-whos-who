@@ -349,8 +349,8 @@ var MeetupService = (function () {
         this.url = 'https://api.meetup.com/';
         this.oathUrl = 'https://secure.meetup.com/oauth2/';
         this.oauthKey = '505i52k35p57g85p8gvl905afa';
-        this.redirectURI = 'https://192.168.0.184/nm';
-        this.oauthSecret = 'fb32q17eq2b2v0tc32lnbmhsgk';
+        this.redirectURI = 'https://home.lukejeter.com:3723/nm/';
+        this.oauthSecret = 'h9eh4jgb00f4lo8rlv7knef9jq';
         var urlHash = document.location.hash.split('&');
         urlHash.forEach(function (property) {
             // FIXME: there's no guarantee access_token will be the first property
